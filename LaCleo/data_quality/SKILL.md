@@ -110,6 +110,10 @@ Scraped datasets often include websites, social profiles, and entity attributes 
 
 ### Link validation (generic URLs)
 
+- **Rule when sharing links**
+  - If you output/share any link (in the final dataset, reports, or messages), it must be validated using the **link metadata you already have** for that link (e.g., `http_status`, `final_url`, `redirect_chain[]`, `checked_at`).
+  - If metadata is missing, mark the link as **unverified** (or run a link-check step if allowed) rather than implying it is valid.
+
 - **Syntax**
   - must parse as a URL; allow only expected schemes (typically `http`, `https`)
   - host must exist and be valid; optionally enforce public suffix rules
